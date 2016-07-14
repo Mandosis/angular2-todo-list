@@ -1,0 +1,16 @@
+<h1>
+  {{title}}
+</h1>
+
+<input type="text"  #newItem />
+<button (click)="addItem(newItem)">Add</button>
+
+<ul *ngFor="let item of items let index = index">
+  <li>
+    <input type="checkbox" [(ngModel)]="item.complete" />
+    <h1>
+      {{item.title}}
+    </h1>
+    <button (click)="removeItem(index)">Remove</button>
+  </li>
+</ul>
